@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class HomeWork {
 
     public static void printThreeWords() {
@@ -61,10 +63,54 @@ public class HomeWork {
             System.out.println(str);
             --number;
         }
+    }
 
+    public static int[] changeArray() {
+        int[] arr = {1,1,1,0,0,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,0};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 1) {
+                arr[i] = 0;
+            } else {
+                arr[i] = 1;
+            }
+        }
+        return arr;
+    }
+
+    public static int[] fillArray() {
+        int[] arr = new int[100];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+        return arr;
+    }
+
+    public  static int[][] twoDimArray() {
+        int[][] arr = new int[5][5];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (j == i) {
+                    arr[i][j] = 1;
+                } else {
+                    arr[i][j] = 0;
+                }
+            }
+        }
+        return arr;
+    }
+
+    public static int[] initArray(int len, int initialValue) {
+        int[] arr = new int[len];
+        Arrays.fill(arr, initialValue);
+        return arr;
     }
 
     public static void main(String[] args) {
         printStr(5, "Privet mir");
+//        System.out.println(Arrays.toString(changeArray()));
+//        System.out.println(Arrays.toString(fillArray()));
+//        System.out.println(Arrays.deepToString(twoDimArray()));
+//        System.out.println(Arrays.toString(initArray(5, 5)));
+
     }
 }
