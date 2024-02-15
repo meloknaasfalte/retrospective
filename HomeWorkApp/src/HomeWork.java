@@ -152,7 +152,7 @@ public class HomeWork {
         workerArr[4] = new Worker("Svytoslav Russovich", "Developer",
                 "russi@rus.com", "8977777777", 1000000, 41);
         for (int i = 0; i < workerArr.length; i++) {
-            if (workerArr[i].age < 40) {
+            if (workerArr[i].age >= 40) {
                 workerArr[i].toConsole();
             }
         }
