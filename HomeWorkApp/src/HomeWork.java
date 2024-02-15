@@ -2,6 +2,38 @@ import java.util.Arrays;
 
 public class HomeWork {
 
+    static class Worker {
+        private String fullName;
+        private String position;
+        private String email;
+        private String tel;
+        private double salary;
+        private int age;
+
+        public Worker(String fullName,
+                      String position,
+                      String email,
+                      String tel,
+                      double salary,
+                      int age) {
+            this.fullName = fullName;
+            this.position = position;
+            this.email = email;
+            this.tel = tel;
+            this.salary = salary;
+            this.age = age;
+        }
+
+        public void toConsole() {
+            System.out.println("fullName" + '=' + fullName + '\n' +
+                                "position" + '=' + position + '\n' +
+                                 "email" + '=' + email + '\n' +
+                                "tel" + '=' + tel + '\n' +
+                                "salary" + '=' + salary + '\n' +
+                                "age" + '=' + age + '\n');
+        }
+    }
+
     public static void printThreeWords() {
         System.out.println("Orange\nBanana\nApple");
     }
@@ -14,7 +46,6 @@ public class HomeWork {
         } else {
             System.out.println("Сумма отрицательная");
         }
-
     }
 
     public static void printColor() {
@@ -26,7 +57,6 @@ public class HomeWork {
         } else {
             System.out.println("Green");
         }
-
     }
 
     public static void compareNumbers() {
@@ -37,7 +67,6 @@ public class HomeWork {
         } else {
             System.out.println("a < b");
         }
-
     }
 
     public static boolean compareNumbers2(int a, int b) {
@@ -51,7 +80,6 @@ public class HomeWork {
         } else {
             System.out.println("number is Negative");
         }
-
     }
 
     public static boolean isNegative(int number) {
@@ -111,6 +139,23 @@ public class HomeWork {
 //        System.out.println(Arrays.toString(fillArray()));
 //        System.out.println(Arrays.deepToString(twoDimArray()));
 //        System.out.println(Arrays.toString(initArray(5, 5)));
+
+        Worker[] workerArr = new Worker[5];
+        workerArr[0] = new Worker("Stanislav Russovich", "Developer",
+                            "russi@rus.com", "8977777777", 1000000, 23);
+        workerArr[1] = new Worker("Vyacheslav Russovich", "Developer",
+                "russi@rus.com", "8977777777", 1000000, 55);
+        workerArr[2] = new Worker("Muroslav Russovich", "Developer",
+                "russi@rus.com", "8977777777", 1000000, 32);
+        workerArr[3] = new Worker("Duroslav Russovich", "Developer",
+                "russi@rus.com", "8977777777", 1000000, 18);
+        workerArr[4] = new Worker("Svytoslav Russovich", "Developer",
+                "russi@rus.com", "8977777777", 1000000, 41);
+        for (int i = 0; i < workerArr.length; i++) {
+            if (workerArr[i].age < 40) {
+                workerArr[i].toConsole();
+            }
+        }
 
     }
 }
