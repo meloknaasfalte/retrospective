@@ -133,6 +133,65 @@ public class HomeWork {
         return arr;
     }
 
+    public class Animal {
+        private final int length;
+
+        public Animal(int length) {
+            this.length = length;
+        }
+        public void run(int length) {
+            System.out.println("pet run" + " " + length + " " + "m");
+        }
+
+        public void swim() {
+            System.out.println("pet swim" + length + "m");
+        }
+    }
+
+    public class Cat extends Animal{
+        private int len;
+        public Cat(int length) {
+            super(length);
+            len = length;
+        }
+
+        public void run() {
+            if (len > 200) {
+                System.out.println("pet doesn't run(");
+            } else {
+                super.run(len);
+            }
+        }
+
+        public void swim() {
+            System.out.println("cat doesn't run(");
+        }
+    }
+
+    public class Dog extends Animal {
+        private int len;
+
+        public Dog(int length) {
+            super(length);
+            len = length;
+        }
+
+        public void run() {
+            if (len > 500) {
+                System.out.println("pet doesn't run on this length(");
+            } else {
+                super.run(len);
+            }
+        }
+
+        public void swim() {
+            if (len > 50) {
+                System.out.println("dog doesn't swim on this length");
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         printStr(5, "Privet mir");
 //        System.out.println(Arrays.toString(changeArray()));
@@ -140,22 +199,8 @@ public class HomeWork {
 //        System.out.println(Arrays.deepToString(twoDimArray()));
 //        System.out.println(Arrays.toString(initArray(5, 5)));
 
-        Worker[] workerArr = new Worker[5];
-        workerArr[0] = new Worker("Stanislav Russovich", "Developer",
-                            "russi@rus.com", "8977777777", 1000000, 23);
-        workerArr[1] = new Worker("Vyacheslav Russovich", "Developer",
-                "russi@rus.com", "8977777777", 1000000, 55);
-        workerArr[2] = new Worker("Muroslav Russovich", "Developer",
-                "russi@rus.com", "8977777777", 1000000, 32);
-        workerArr[3] = new Worker("Duroslav Russovich", "Developer",
-                "russi@rus.com", "8977777777", 1000000, 18);
-        workerArr[4] = new Worker("Svytoslav Russovich", "Developer",
-                "russi@rus.com", "8977777777", 1000000, 41);
-        for (int i = 0; i < workerArr.length; i++) {
-            if (workerArr[i].age >= 40) {
-                workerArr[i].toConsole();
-            }
-        }
+        Cat cat = new HomeWork().new Cat(250);
+        cat.run();
 
     }
 }
