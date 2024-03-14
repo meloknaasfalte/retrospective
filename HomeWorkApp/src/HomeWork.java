@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Objects;
 
 public class HomeWork {
 
@@ -192,6 +195,24 @@ public class HomeWork {
         }
     }
 
+    public class Phonebook {
+
+        HashMap <String, String> phoneBook = new HashMap<>();
+
+        public void add(String surname, String tel) {
+            phoneBook.put(tel, surname);
+        }
+
+        public void get(String surname) {
+            for (HashMap.Entry<String, String> entry: phoneBook.entrySet()) {
+                String value = entry.getValue();
+                if (Objects.equals(value, surname)) {
+                    System.out.println(entry.getKey());
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         printStr(5, "Privet mir");
 //        System.out.println(Arrays.toString(changeArray()));
@@ -201,6 +222,23 @@ public class HomeWork {
 
         Cat cat = new HomeWork().new Cat(250);
         cat.run();
+        String[] arr = {"privet","privet", "lolk", "milk", "mi", "aaa"};
+        ArrayList<String> res = new ArrayList<String>();
+        for (String str : arr) {
+            if (!res.contains(str)) {
+                res.add(str);
+            }
+        }
+        Object[] resObj = res.toArray();
+        for(Object str : resObj){
+            System.out.println(str);
+        }
 
+        Phonebook phoneBook = new HomeWork().new Phonebook();
+        phoneBook.add("Fedoseyeva", "+7888888888");
+        phoneBook.add("Fedoseyeva", "+7999999999");
+        phoneBook.add("Pyshkin", "+75555555555");
+
+        phoneBook.get("Fedoseyeva");
     }
 }
